@@ -1,0 +1,35 @@
+{
+  "name": "example-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server/index.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "latest",
+    "express": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "babel-loader": "latest",
+    "clean-webpack-plugin": "latest",
+    "css-loader": "latest",
+    "html-webpack-plugin": "latest",
+    "jest": "latest",
+    "mini-css-extract-plugin": "latest",
+    "node-sass": "latest",
+    "sass-loader": "latest",
+    "style-loader": "latest",
+    "webpack-dev-server": "latest"
+  }
+}
