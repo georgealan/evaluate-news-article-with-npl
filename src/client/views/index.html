@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-    </head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Natural Language processing</title>
+		<link rel="stylesheet" href="/styles/resets.scss" />
+		<link rel="stylesheet" href="/styles/base.scss" />
+		<link rel="stylesheet" href="/styles/header.scss" />
+		<link rel="stylesheet" href="/styles/form.scss" />
+		<link rel="stylesheet" href="/styles/footer.scss" />
+	</head>
+	<body>
+		<header>
+			<h1 class="title">Natural Language Processing MeaningCloud API</h1>
+		</header>
 
-    <body>
+		<main class="content">
+			<div class="content-wrapper">
+				<section class="form-container">
+					<form id="form-nlp" onsubmit="return Client.handleSubmit(event)">
+						<input id="text-input" type="text" name="input" value="" placeholder="Enter a text here" />
+						<button class="btn" type="submit" id="submit" value="Analysis" onclick="return Client.handleSubmit(event)"
+							onsubmit="return Client.handleSubmit(event)">Analysis</button>
+					</form>
+				</section>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+				<section class="results">
+					<table class="table-results">
+						<tr>
+							<th colspan="2" class="table-header">RESULTS:</th>
+						</tr>
+						<tr>
+							<th scope="row" class="table-title">Polarity</th>
+							<td id="polarity"></td>
+						</tr>
+						<tr>
+							<th scope="row" class="table-title">Agreement</th>
+							<td id="agreement"></td>
+						</tr>
+						<tr>
+							<th scope="row" class="table-title">Subjectivity</th>
+							<td id="subjectivity"></td>
+						</tr>
+						<tr>
+							<th scope="row" class="table-title">Confidence</th>
+							<td id="confidence"></td>
+						</tr>
+						<tr>
+							<th scope="row" class="table-title">Irony</th>
+							<td id="irony"></td>
+						</tr>
+					</table>
+        </section>
+      </div>
+		</main>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            </section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
-
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
-    </body>
+		<footer>
+      <p class="footer-text"> &copy; <span id="date"></span> George Alan Rufo - Udacity Bertelsmann</p>
+      <div class="social-media-wrapper">
+          <a href="https://github.com/georgealan" target="_blank"><img class="github-icon" src="../assets/github.png" alt="GitHub Logo" /></a>
+          <a href="https://www.linkedin.com/in/george-alan-fullstack-developer/" target="_blank"><img src="../assets/linkedin.png" alt="Linkedin Logo" /></a>
+      </div>
+		</footer>
+	</body>
 </html>

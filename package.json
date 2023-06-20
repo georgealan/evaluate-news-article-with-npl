@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
@@ -13,8 +13,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cors": "latest",
     "dotenv": "latest",
     "express": "latest",
+    "node-fetch": "latest",
     "webpack": "latest",
     "webpack-cli": "latest"
   },
@@ -24,6 +26,7 @@
     "babel-loader": "latest",
     "clean-webpack-plugin": "latest",
     "css-loader": "latest",
+    "file-loader": "latest",
     "html-webpack-plugin": "latest",
     "jest": "latest",
     "mini-css-extract-plugin": "latest",
