@@ -1,28 +1,28 @@
-// Get actual Year
-let today = new Date()
-let date = today.getFullYear()
-const actualYear = document.getElementById('date')
-actualYear.innerText = date
+import { checkUrl } from "./urlChecker"
 
 const handleSubmit = async (e) => {
 	e.preventDefault()
 
-	let text = document.getElementById('text-input').value
+	let url = document.getElementById('text-input').value
 	console.log('::: Form Submitted :::')
-	console.log("User's text input is: ", text)
+	console.log("User's text input is: ", url)
 
-    try {
-        const response = await fetch('/meaningAPI', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ text }),
-        })
-        const data = await response.json()
-        updateUI(data)
-    } catch (error) {
-        console.log('Error', error)
+    if (checkUrl(url) == true) {
+        try {
+            const response = await fetch('/meaningAPI', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ url: url }),
+            })
+            const data = await response.json()
+            updateUI(data)
+        } catch (error) {
+            console.log('Error', error)
+        }
+    } else {
+        alert("Invalid URL! Please provide another one!");
     }
 }
 
@@ -37,17 +37,17 @@ const updateUI = async (response) => {
 function checkPolarity(value) {
     switch(value) {
         case 'P+':
-            return 'Strong Positive'
+            return 'STRONG POSITIVE'
         case 'P':
-            return 'Positive'
+            return 'POSITIVE'
         case 'NEU':
-            return 'Neutral'
+            return 'NEUTRAL'
         case 'N':
-            return 'Negative'
+            return 'NEGATIVE'
         case 'N+':
-            return 'Strong Negative'
+            return 'STRONG NEGATIVE'
         case 'NONE':
-            return 'Without Sentiment'
+            return 'WITHOUT SENTIMENT'
     }
 }
 

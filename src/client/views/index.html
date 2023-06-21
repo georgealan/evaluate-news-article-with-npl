@@ -56,11 +56,26 @@
 		</main>
 
 		<footer>
-      <p class="footer-text"> &copy; <span id="date"></span> George Alan Rufo - Udacity Bertelsmann</p>
+      <p class="footer-text"> &copy; 2023 George Alan Rufo - Udacity Bertelsmann</p>
       <div class="social-media-wrapper">
           <a href="https://github.com/georgealan" target="_blank"><img class="github-icon" src="../assets/github.png" alt="GitHub Logo" /></a>
           <a href="https://www.linkedin.com/in/george-alan-fullstack-developer/" target="_blank"><img src="../assets/linkedin.png" alt="Linkedin Logo" /></a>
       </div>
 		</footer>
+
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker
+						.register('/service-worker.js')
+						.then((registration) => {
+							console.log('SW registered: ', registration)
+						})
+						.catch((registrationError) => {
+							console.log('SW registration failed: ', registrationError)
+						})
+				})
+			}
+		</script>
 	</body>
 </html>

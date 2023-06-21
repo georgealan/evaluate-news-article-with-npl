@@ -30,7 +30,7 @@ app.listen(8081, function () {
 })
 
 app.post('/meaningAPI', (req, res) => {
-    const url = `${baseURL}key=${apiKey}&txt=${req.body.text}&lang=auto`
+    const url = `${baseURL}key=${apiKey}&url=${req.body.url}&lang=auto`
   
     fetch(url, {
       method: 'POST',
@@ -40,10 +40,10 @@ app.post('/meaningAPI', (req, res) => {
     })
     .then((response) => response.json())
     .then((data) => {
-    res.send(data)
-    console.log(data)
+      res.send(data)
+      console.log(data)
     })
     .catch((error) => {
-    console.log('Error', error)
+      console.log('Error', error)
     })
 })

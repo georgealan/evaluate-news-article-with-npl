@@ -33,6 +33,7 @@
     "node-sass": "latest",
     "sass-loader": "latest",
     "style-loader": "latest",
-    "webpack-dev-server": "latest"
+    "webpack-dev-server": "latest",
+    "workbox-webpack-plugin": "latest"
   }
 }
